@@ -1,4 +1,4 @@
-package jobClass;
+package player;
 
 public class PlayerInformation {
     private String name;
@@ -19,6 +19,4 @@ public class PlayerInformation {
     public void setClassSetting(String classSetting) {
         this.classSetting = classSetting;
     }
-
-
 }
