@@ -7,6 +7,7 @@ public class Main {
     final static String MAGICIAN = "마법사";
     final static String ARCHER = "궁수";
     final static String ASSASSIN = "암살자";
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
@@ -15,57 +16,37 @@ public class Main {
 
         System.out.print("클래스 설정 (전사, 마법사, 궁수, 암살자) : ");
         String classSet = sc.next();
-        choiceJob(classSet, name);
 
-        PlayerInformation pI;
-
+        DefaultClass character = null;
         switch (classSet) {
             case WARRIOR:
-                pI = new WarriorClass();
-                pI.setName(name);
-                pI.setClassSetting(classSet);
-
-                System.out.println(pI.getClassSetting() + " " + pI.getName() + " 생성 완료!");
+                character = new WarriorClass();
                 break;
             case MAGICIAN:
-                pI = new MagicianClass();
-                pI.setName(name);
-                pI.setClassSetting(classSet);
-
-                System.out.println(pI.getClassSetting() + " " + pI.getName() + " 생성 완료!");
+                character = new MagicianClass();
                 break;
             case ARCHER:
-                pI = new ArcherClass();
-                pI.setName(name);
-                pI.setClassSetting(classSet);
-
-                System.out.println(pI.getClassSetting() + " " + pI.getName() + " 생성 완료!");
+                character = new ArcherClass();
                 break;
             case ASSASSIN:
-                pI = new AssassinClass();
-                pI.setName(name);
-                pI.setClassSetting(classSet);
-
-                System.out.println(pI.getClassSetting() + " " + pI.getName() + " 생성 완료!");
+                character = new AssassinClass();
+                break;
+            default:
                 break;
         }
-    }
-    public static void choiceJob(String classSet, String name){
-        PlayerInformation pI = new PlayerInformation();
 
-        switch (classSet) {
-            case WARRIOR:
-
-                break;
-            case MAGICIAN:
-
-                break;
-            case ARCHER:
-
-                break;
-            case ASSASSIN:
-
-                break;
+        if (character != null) {
+            character.setName(name);
+            character.setClassSetting(classSet);
         }
+
+        System.out.println(character != null ? character.getClassSetting() : null);
+        System.out.println(character != null ? character.getName() : null);
+        System.out.println("경험치 : " + (character != null ? character.getExp() : 0));
+        System.out.println("체력 : " + (character != null ? character.getHealth() : 0));
+        System.out.println("공격력 : " + (character != null ? character.getDamage() : 0));
+        System.out.println("에너지 : " + (character != null ? character.getEnergy() : 0));
+        System.out.println("스킬데미지 : " + (character != null ? character.getSkillDamage() : 0));
+
     }
 }
