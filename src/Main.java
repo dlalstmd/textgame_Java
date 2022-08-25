@@ -9,6 +9,7 @@ public class Main {
     final static String ASSASSIN = "암살자";
 
     public static void main(String[] args) {
+        PlayerLife PL = new PlayerLife();
         Scanner sc = new Scanner(System.in);
 
         System.out.print("닉네임 설정 : ");
@@ -38,15 +39,12 @@ public class Main {
         if (character != null) {
             character.setName(name);
             character.setClassSetting(classSet);
+            character.printStatus();
+            PL.Life();
+            /*
+            PL.Life에 들어가서 while문이 작동해햐 하는데 DefaultClass 에서 get.health()를 했는데
+            0으로 나온걸 보아하니 DefaultClass 에서 health가 업데이트가 안된거 같아요
+            */
         }
-
-        System.out.println(character != null ? character.getClassSetting() : null);
-        System.out.println(character != null ? character.getName() : null);
-        System.out.println("경험치 : " + (character != null ? character.getExp() : 0));
-        System.out.println("체력 : " + (character != null ? character.getHealth() : 0));
-        System.out.println("공격력 : " + (character != null ? character.getDamage() : 0));
-        System.out.println("에너지 : " + (character != null ? character.getEnergy() : 0));
-        System.out.println("스킬데미지 : " + (character != null ? character.getSkillDamage() : 0));
-
     }
 }

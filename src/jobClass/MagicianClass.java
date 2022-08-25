@@ -7,5 +7,6 @@ public class MagicianClass extends DefaultClass {
         setEnergy(100);
         setDamage(10);
         setSkillDamage(50);
+        setPlayerClass("마법사");
     }
 }

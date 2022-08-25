@@ -1,6 +1,8 @@
 package player;
 
-public class PlayerInformation {
+import world.PlayerLocation;
+
+public class PlayerInformation extends PlayerLocation {
     private String name;
     private String classSetting;
 

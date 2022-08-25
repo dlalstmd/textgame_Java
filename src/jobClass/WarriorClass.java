@@ -7,5 +7,6 @@ public class WarriorClass extends DefaultClass {
         setEnergy(60);
         setDamage(20);
         setSkillDamage(30);
+        setPlayerClass("전사");
     }
 }
