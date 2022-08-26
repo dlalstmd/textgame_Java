@@ -1,10 +1,21 @@
 package player;
 
-import world.PlayerLocation;
 
-public class PlayerInformation extends PlayerLocation {
+public class PlayerInformation {
+
     private String name;
     private String classSetting;
+
+
+    private String location = "Beginner Town";
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
 
     public String getName() {
         return name;
