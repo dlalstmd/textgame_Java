@@ -1,6 +1,6 @@
 package jobClass;
 
-import player.PlayerInformation;
+import player.*;
 
 public class DefaultClass extends PlayerInformation {
     private int exp;
@@ -9,6 +9,16 @@ public class DefaultClass extends PlayerInformation {
     private int damage;
     private int skillDamage;
     private String playerClass;
+
+    private PlayerLife playerLife;
+
+    public PlayerLife getCharacterLife() {
+        return playerLife.Life().getCharacterLife();
+    }
+
+    public void setPlayerLife(PlayerLife playerLife) {
+        this.playerLife = playerLife;
+    }
 
     public String getPlayerClass() {
         return playerClass;

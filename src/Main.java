@@ -1,4 +1,5 @@
 import jobClass.*;
+import player.PlayerLife;
 
 import java.util.Scanner;
 
@@ -9,7 +10,6 @@ public class Main {
     final static String ASSASSIN = "암살자";
 
     public static void main(String[] args) {
-        PlayerLife PL = new PlayerLife();
         Scanner sc = new Scanner(System.in);
 
         System.out.print("닉네임 설정 : ");
@@ -40,11 +40,17 @@ public class Main {
             character.setName(name);
             character.setClassSetting(classSet);
             character.printStatus();
-            PL.Life();
+
+            PlayerLife playerLife = new PlayerLife(character);
+            character = playerLife.Life();
+
+
             /*
-            PL.Life에 들어가서 while문이 작동해햐 하는데 DefaultClass 에서 get.health()를 했는데
-            0으로 나온걸 보아하니 DefaultClass 에서 health가 업데이트가 안된거 같아요
+            PL.Life 에 들어가서 while 문이 작동해햐 하는데 DefaultClass 에서 get.health()를 했는데
+            0으로 나온걸 보아하니 DefaultClass 에서 health 가 업데이트가 안된거 같아요
             */
+
+
         }
     }
 }

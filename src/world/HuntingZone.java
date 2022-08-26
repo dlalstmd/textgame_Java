@@ -1,7 +1,9 @@
 package world;
 
-public class HuntingZone extends PlayerLocation{
-    PlayerLocation playerLocation = new PlayerLocation();
+import player.PlayerInformation;
+
+public class HuntingZone extends PlayerInformation {
+    PlayerInformation playerLocation = new PlayerInformation();
     Monster monster = new Monster();
     public void location_set(){
         playerLocation.setLocation("HuntingZone");
