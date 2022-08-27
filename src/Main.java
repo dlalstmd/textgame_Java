@@ -43,14 +43,6 @@ public class Main {
 
             PlayerLife playerLife = new PlayerLife(character);
             character = playerLife.Life();
-
-
-            /*
-            PL.Life 에 들어가서 while 문이 작동해햐 하는데 DefaultClass 에서 get.health()를 했는데
-            0으로 나온걸 보아하니 DefaultClass 에서 health 가 업데이트가 안된거 같아요
-            */
-
-
         }
     }
 }

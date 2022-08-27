@@ -14,6 +14,10 @@ public class Monster {
         monsterList.add("slime");
     }
 
+    public ArrayList<String> getMonsterList() {
+        return monsterList;
+    }
+
     public int getMonsterDamage() {
         return monsterDamage;
     }

@@ -6,7 +6,6 @@ public class PlayerInformation {
     private String name;
     private String classSetting;
 
-
     private String location = "Beginner Town";
 
     public String getLocation() {
@@ -16,7 +15,6 @@ public class PlayerInformation {
     public void setLocation(String location) {
         this.location = location;
     }
-
     public String getName() {
         return name;
     }
