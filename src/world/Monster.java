@@ -1,19 +1,27 @@
 package world;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Monster {
     private int monsterDamage;
     private int monsterHealth;
     ArrayList<String> monsterList = new ArrayList<>();
-    public void setMonsterList(){
+
+    Random random = new Random();
+    public String getRandomMonster(){
         monsterList.add("goblin");
         monsterList.add("bet");
         monsterList.add("rat");
         monsterList.add("dragon");
         monsterList.add("slime");
-    }
 
+        String[] monsterList = {"goblin", "bet", "rat", "dragon", "slime"};
+
+        String monster = monsterList[random.nextInt(5)];
+
+        return monster;
+    }
     public ArrayList<String> getMonsterList() {
         return monsterList;
     }
