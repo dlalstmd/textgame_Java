@@ -8,5 +8,6 @@ public class ArcherClass extends DefaultClass {
         setDamage(25);
         setSkillDamage(30);
         setPlayerClass("궁수");
+        setLevel(1);
     }
 }

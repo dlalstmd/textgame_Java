@@ -15,13 +15,13 @@ public class HuntingZone extends PlayerInformation{
     }
 
     public int moveToHuntingZone(int HP) {
-        System.out.print("사냥터로 이동하시겠습니까? (Yes, No) : ");
+        System.out.print("사냥터로 이동하시겠습니까? (네, 아니오) : ");
         String answer = sc.next();
 
         int Damage = 0;
         String choice = null;
 
-        if (answer.equals("Yes")) {
+        if (answer.equals("네")) {
             location_set();
             System.out.println("HuntingZone으로 이동했습니다.");
 

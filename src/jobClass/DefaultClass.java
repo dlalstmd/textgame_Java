@@ -9,6 +9,15 @@ public class DefaultClass extends PlayerInformation {
     private int damage;
     private int skillDamage;
     private String playerClass;
+    private int level;
+
+    public int getLevel() {
+        return level;
+    }
+
+    public void setLevel(int level) {
+        this.level = level;
+    }
 
     private PlayerLife playerLife;
 

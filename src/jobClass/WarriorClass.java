@@ -8,5 +8,6 @@ public class WarriorClass extends DefaultClass {
         setDamage(20);
         setSkillDamage(30);
         setPlayerClass("전사");
+        setLevel(1);
     }
 }

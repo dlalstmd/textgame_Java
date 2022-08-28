@@ -8,5 +8,6 @@ public class AssassinClass extends DefaultClass {
         setDamage(30);
         setSkillDamage(40);
         setPlayerClass("암살자");
+        setLevel(1);
     }
 }
