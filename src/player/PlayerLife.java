@@ -24,6 +24,11 @@ public class PlayerLife implements ActionChoice, Market{
 
             int portionCount = 0;
 
+            if (action.equals("스텟출력")){
+                character.printStatus();
+                action = ActionChoice.Action();
+            }
+
             while(!action.equals("사냥터")){
                 if (portionCount >= 2){
                     System.out.println("상점 너무 많이가네 컷");
@@ -40,8 +45,6 @@ public class PlayerLife implements ActionChoice, Market{
             }
 
             character.setHealth(huntingZone.moveToHuntingZone(character.getHealth()));
-
-            character.printStatus();
 
             day += 1;
         }
