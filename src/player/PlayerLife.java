@@ -3,9 +3,7 @@ package player;
 import jobClass.*;
 import world.*;
 
-import java.io.PrintStream;
-
-public class PlayerLife implements ActionChoice, Market{
+public class PlayerLife implements ActionChoice, Heal, PlayerInventory{
     public DefaultClass character;
     HuntingZone huntingZone = new HuntingZone();
     public PlayerLife(DefaultClass character) {
@@ -13,40 +11,92 @@ public class PlayerLife implements ActionChoice, Market{
     }
 
     public DefaultClass Life(){
-        int day = 1;
-        String choice = null;
-        while (character.getHealth() > 0){
+        int day = 0;
+        int weaponPrintCount = 1;
+        String action = ActionChoice.Action(day);
+
+        while (!action.equals("자결")){
+
+            if(character.getHealth() == 0){
+                break;
+            } else if (day == 0) {
+                day += 1;
+            }
             System.out.println("===========" + day + "일 차" + "===========");
             System.out.println();
             System.out.println("현재 위치 : " + character.getLocation());
             System.out.println();
-            String action = ActionChoice.Action();
+            action = ActionChoice.Action(day);
 
             int portionCount = 0;
 
-            if (action.equals("스텟출력")){
-                character.printStatus();
-                action = ActionChoice.Action();
-            }
-
-            while(!action.equals("사냥터")){
-                if (portionCount >= 2){
-                    System.out.println("상점 너무 많이가네 컷");
+            switch (action) {
+                default:
+                    action = "잘못씀";
+                    System.out.println("타이핑을 잘못하면 처음부터");
                     break;
-                }
 
-                character.setHealth(Market.portion(character.getHealth()));
+                case "다음날":
+                    day += 1;
+                    break;
 
-                System.out.println("포션 사용! HP + 10");
+                case "회복":
+                    while(action.equals("회복")){
+                        if (portionCount >= 2){
+                            System.out.println("회복 (2/2) 컷");
+                            break;
+                        }
 
-                portionCount += 1;
+                        character.setHealth(Heal.portion(character.getHealth()));
 
-                action = ActionChoice.Action();
+                        System.out.println("포션 사용! HP + 10");
+
+                        portionCount += 1;
+
+                        action = ActionChoice.Action(day);
+                    }
+
+                case "스텟출력":
+                    character.printStatus();
+                    action = ActionChoice.Action(day);
+
+                    while (action.equals("스텟출력")) {
+                        character.printStatus();
+                        action = ActionChoice.Action(day);
+                    }
+                    break;
+
+                case "상점":
+                    PlayerInventory.weaponListPrint(weaponPrintCount);
+                    weaponPrintCount += 1;
+                    action = ActionChoice.Action(day);
+
+                    while(action.equals("상점")){
+                        PlayerInventory.weaponListPrint(weaponPrintCount);
+                        action = ActionChoice.Action(day);
+                    }
+                    break;
+
+                case "사냥터":
+                    character.setHealth(huntingZone.moveToHuntingZone(character.getHealth()));
+                    action = ActionChoice.Action(day);
+
+                    while(action.equals("사냥터")){
+                        if(character.getHealth() == 0) {
+                            break;
+                        }
+                        character.setHealth(huntingZone.moveToHuntingZone(character.getHealth()));
+                        action = ActionChoice.Action(day);
+                    }
+                    break;
+            }
+            if (action.equals("잘못씀")){
+                continue;
             }
 
-            character.setHealth(huntingZone.moveToHuntingZone(character.getHealth()));
-
-            day += 1;
+            else if(!action.equals("다음날")){
+                day += 1;
+            }
         }
 
         System.out.println("[    YOU DIE    ]");

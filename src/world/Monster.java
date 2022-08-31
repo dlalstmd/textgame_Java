@@ -18,9 +18,7 @@ public class Monster {
 
         String[] monsterList = {"goblin", "bet", "rat", "dragon", "slime"};
 
-        String randomMonster = monsterList[random.nextInt(5)];
-
-        return randomMonster;
+        return monsterList[random.nextInt(5)];
     }
     public ArrayList<String> getMonsterList() {
         return monsterList;

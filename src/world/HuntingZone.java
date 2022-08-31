@@ -36,14 +36,15 @@ public class HuntingZone extends PlayerInformation{
                     choice = sc.next();
                     if (choice.equals("공격")){
                         Damage = HealthCalculate.healthCount(HP, monster.getMonsterDamage());
+                        System.out.println();
+                        System.out.println("   [   ]   /             ");
+                        System.out.println("    /|\\   /              ");
+                        System.out.println("   / | \\ /      고블린        ");
+                        System.out.println("     |  /                ");
+                        System.out.println("    / \\                  ");
+                        System.out.println("   /   \\                 ");
                     }
-                    System.out.println();
-                    System.out.println("   [   ]   /             ");
-                    System.out.println("    /|\\   /              ");
-                    System.out.println("   / | \\ /      고블린        ");
-                    System.out.println("     |  /                ");
-                    System.out.println("    / \\                  ");
-                    System.out.println("   /   \\                 ");
+
                     break;
                 case "bet":
                     monster.bet();
@@ -53,14 +54,15 @@ public class HuntingZone extends PlayerInformation{
                     choice = sc.next();
                     if (choice.equals("공격")){
                         Damage = HealthCalculate.healthCount(HP, monster.getMonsterDamage());
+                        System.out.println();
+                        System.out.println("   [   ]   /             ");
+                        System.out.println("    /|\\   /              ");
+                        System.out.println("   / | \\ /      박쥐        ");
+                        System.out.println("     |  /                ");
+                        System.out.println("    / \\                  ");
+                        System.out.println("   /   \\                 ");
                     }
-                    System.out.println();
-                    System.out.println("   [   ]   /             ");
-                    System.out.println("    /|\\   /              ");
-                    System.out.println("   / | \\ /      박쥐        ");
-                    System.out.println("     |  /                ");
-                    System.out.println("    / \\                  ");
-                    System.out.println("   /   \\                 ");
+
                     break;
                 case "rat":
                     monster.rat();
@@ -70,14 +72,15 @@ public class HuntingZone extends PlayerInformation{
                     choice = sc.next();
                     if (choice.equals("공격")){
                         Damage = HealthCalculate.healthCount(HP, monster.getMonsterDamage());
+                        System.out.println();
+                        System.out.println("   [   ]   /             ");
+                        System.out.println("    /|\\   /              ");
+                        System.out.println("   / | \\ /      쥐        ");
+                        System.out.println("     |  /                ");
+                        System.out.println("    / \\                  ");
+                        System.out.println("   /   \\                 ");
                     }
-                    System.out.println();
-                    System.out.println("   [   ]   /             ");
-                    System.out.println("    /|\\   /              ");
-                    System.out.println("   / | \\ /      쥐        ");
-                    System.out.println("     |  /                ");
-                    System.out.println("    / \\                  ");
-                    System.out.println("   /   \\                 ");
+
                     break;
                 case "dragon":
                     monster.dragon();
@@ -87,14 +90,15 @@ public class HuntingZone extends PlayerInformation{
                     choice = sc.next();
                     if (choice.equals("공격")){
                         Damage = HealthCalculate.healthCount(HP, monster.getMonsterDamage());
+                        System.out.println();
+                        System.out.println("   [   ]   /             ");
+                        System.out.println("    /|\\   /              ");
+                        System.out.println("   / | \\ /      드래곤        ");
+                        System.out.println("     |  /                ");
+                        System.out.println("    / \\                  ");
+                        System.out.println("   /   \\                 ");
                     }
-                    System.out.println();
-                    System.out.println("   [   ]   /             ");
-                    System.out.println("    /|\\   /              ");
-                    System.out.println("   / | \\ /      드래곤        ");
-                    System.out.println("     |  /                ");
-                    System.out.println("    / \\                  ");
-                    System.out.println("   /   \\                 ");
+
                     break;
                 case "slime":
                     monster.slime();
@@ -104,14 +108,15 @@ public class HuntingZone extends PlayerInformation{
                     choice = sc.next();
                     if (choice.equals("공격")){
                         Damage = HealthCalculate.healthCount(HP, monster.getMonsterDamage());
+                        System.out.println();
+                        System.out.println("   [   ]   /             ");
+                        System.out.println("    /|\\   /              ");
+                        System.out.println("   / | \\ /      슬라임        ");
+                        System.out.println("     |  /                ");
+                        System.out.println("    / \\                  ");
+                        System.out.println("   /   \\                 ");
                     }
-                    System.out.println();
-                    System.out.println("   [   ]   /             ");
-                    System.out.println("    /|\\   /              ");
-                    System.out.println("   / | \\ /      슬라임        ");
-                    System.out.println("     |  /                ");
-                    System.out.println("    / \\                  ");
-                    System.out.println("   /   \\                 ");
+
                     break;
             }
         } else if (answer.equals("아니오")) {

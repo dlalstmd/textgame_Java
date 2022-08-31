@@ -42,6 +42,7 @@ public class Main {
             character.printStatus();
 
             PlayerLife playerLife = new PlayerLife(character);
+
             character = playerLife.Life();
         }
     }

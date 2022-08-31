@@ -1,6 +1,6 @@
 package world;
 
-public interface Market {
+public interface Heal {
     public static int portion(int HP){
         return HP + 10;
     }
