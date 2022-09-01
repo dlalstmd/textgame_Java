@@ -1,6 +1,5 @@
 package player;
 
-
 public class PlayerInformation {
 
     private String name;

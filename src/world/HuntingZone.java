@@ -11,7 +11,7 @@ public class HuntingZone extends PlayerInformation{
     Monster monster = new Monster();
 
     public void location_set(){
-        playerLocation.setLocation("HuntingZone");
+        playerLocation.getLocation();
     }
 
     public int moveToHuntingZone(int HP) {
