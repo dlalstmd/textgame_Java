@@ -3,8 +3,6 @@ package player;
 import jobClass.*;
 import world.*;
 
-import java.util.ArrayList;
-
 public class PlayerLife implements ActionChoice, Heal, PlayerInventory{
     public DefaultClass character;
     HuntingZone huntingZone = new HuntingZone();
