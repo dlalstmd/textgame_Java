@@ -67,7 +67,7 @@ public class PlayerLife implements ActionChoice, Heal, PlayerInventory{
                 }
             }
         }
-        DieMassage.dieMassage();
+        DieMassage.dieMassage(day);
 
         return character;
     }
