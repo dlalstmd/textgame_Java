@@ -3,6 +3,9 @@ package player;
 import java.util.ArrayList;
 
 public interface DieMassage {
+
+    void dieMessage(int day);
+
     public static void dieMassage(int day){
         ArrayList<String> dieMassage = new ArrayList<>();
         dieMassage.add("Y");
