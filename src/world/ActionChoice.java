@@ -1,9 +1,12 @@
 package world;
 
+import jobClass.DefaultClass;
+
 import java.util.Scanner;
 
-public interface ActionChoice {
+public interface ActionChoice{
     Scanner sc = new Scanner(System.in);
+    DefaultClass defaultClass = new DefaultClass();
 
     public static String Action(int start){
         String answer = "start";
@@ -17,13 +20,14 @@ public interface ActionChoice {
         return answer;
     }
 
-    public static int weaponBuy(){
+    public static int weaponBuy(int money){
         String answer = null;
         int weaponNum;
         answer = sc.next();
         if(answer.equals("예")){
             System.out.print("몇번 무기를 구입하시겠습니까? : ");
             weaponNum = sc.nextInt();
+            defaultClass.setMoney(defaultClass.getMoney()-10000);
             return weaponNum;
         }
         else{

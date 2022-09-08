@@ -57,8 +57,14 @@ public class PlayerLife implements ActionChoice, Heal, PlayerInventory{
                         PlayerInventory.weaponListPrint(weaponPrintCount);
                         weaponPrintCount += 1;
                         System.out.print("무기를 구입하시겠습니까? (예, 아니오) : ");
+
+                        if((character.getMoney() - 10000) < 0){
+                            System.out.println("돈이 모자르다..");
+                            break label;
+                        }
+
                         int weaponBuy;
-                        weaponBuy = ActionChoice.weaponBuy();
+                        weaponBuy = ActionChoice.weaponBuy(character.getMoney());
                         if(weaponBuy == 0){
                             break;
                         } else{
@@ -67,6 +73,8 @@ public class PlayerLife implements ActionChoice, Heal, PlayerInventory{
                         break;
                     case "사냥터":
                         character.setHealth(huntingZone.moveToHuntingZone(character.getHealth()));
+                        character.setExp(character.getExp()+10);
+                        character.setMoney(character.getMoney()+1000);
                         break;
                     default:
                         action = "잘못씀";

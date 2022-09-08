@@ -3,22 +3,22 @@ package jobClass;
 import player.*;
 
 public class DefaultClass extends PlayerInformation {
-    private int exp;
-    private int health;
-    private int energy;
-    private int damage;
-    private int skillDamage;
-    private String playerClass;
-    private int level;
+    private static int exp;
+    private static int health;
+    private static int energy;
+    private static int damage;
+    private static int skillDamage;
+    private static String playerClass;
+    private static int level;
 
-    private int money;
+    private static int money;
 
     public int getMoney() {
         return money;
     }
 
     public void setMoney(int money) {
-        this.money = money;
+        DefaultClass.money = money;
     }
 
     public int getLevel() {
@@ -26,7 +26,7 @@ public class DefaultClass extends PlayerInformation {
     }
 
     public void setLevel(int level) {
-        this.level = level;
+        DefaultClass.level = level;
     }
 
     private PlayerLife playerLife;
@@ -44,7 +44,7 @@ public class DefaultClass extends PlayerInformation {
     }
 
     public void setPlayerClass(String playerClass) {
-        this.playerClass = playerClass;
+        DefaultClass.playerClass = playerClass;
     }
 
     public int getSkillDamage() {
@@ -52,7 +52,7 @@ public class DefaultClass extends PlayerInformation {
     }
 
     public void setSkillDamage(int skillDamage) {
-        this.skillDamage = skillDamage;
+        DefaultClass.skillDamage = skillDamage;
     }
 
     public int getDamage() {
@@ -60,7 +60,7 @@ public class DefaultClass extends PlayerInformation {
     }
 
     public void setDamage(int damage) {
-        this.damage = damage;
+        DefaultClass.damage = damage;
     }
 
     public int getExp() {
@@ -68,7 +68,7 @@ public class DefaultClass extends PlayerInformation {
     }
 
     public void setExp(int exp) {
-        this.exp = exp;
+        DefaultClass.exp = exp;
     }
 
     public int getHealth() {
@@ -76,7 +76,7 @@ public class DefaultClass extends PlayerInformation {
     }
 
     public void setHealth(int health) {
-        this.health = health;
+        DefaultClass.health = health;
     }
 
     public int getEnergy() {
@@ -84,7 +84,7 @@ public class DefaultClass extends PlayerInformation {
     }
 
     public void setEnergy(int energy) {
-        this.energy = energy;
+        DefaultClass.energy = energy;
     }
 
     public void printStatus(){
@@ -94,6 +94,7 @@ public class DefaultClass extends PlayerInformation {
         System.out.println("공격력 : " + getDamage());
         System.out.println("에너지 : " + getEnergy());
         System.out.println("스킬데미지 : " + getSkillDamage());
+        System.out.println("돈 : " + getMoney());
         System.out.println("=============================");
     }
 

@@ -13,6 +13,7 @@ public class AssassinClass extends DefaultClass implements DieMassage {
         setSkillDamage(40);
         setPlayerClass("암살자");
         setLevel(1);
+        setMoney(10000);
     }
 
     @Override

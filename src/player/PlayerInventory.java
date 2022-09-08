@@ -1,9 +1,12 @@
 package player;
 
+import jobClass.DefaultClass;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public interface PlayerInventory {
+public interface PlayerInventory{
+
     HashMap<String, Integer> inventory = new HashMap<>();
 
     ArrayList<String> weaponList = new ArrayList<>();
@@ -27,30 +30,39 @@ public interface PlayerInventory {
     }
 
     public static void buyWeapon(int weaponNum){
+        DefaultClass defaultClass = new DefaultClass();
+
         if(inventory.size() >= 3){
             System.out.println("무기가 너무 많다...");
         }else {
             switch (weaponNum){
                 case 1:
                     setInventory("사신도 멸하는 작열의 검", 20);
+                    defaultClass.setDamage(defaultClass.getDamage() + 20);
                     break;
                 case 2:
                     setInventory("연옥을 재단하 자르는 칼끝", 30);
+                    defaultClass.setDamage(defaultClass.getDamage() + 30);
                     break;
                 case 3:
                     setInventory("구적하는 불하늘의 양손", 25);
+                    defaultClass.setDamage(defaultClass.getDamage() + 25);
                     break;
                 case 4:
                     setInventory("시조의 불꽃을 품은 꽃", 35);
+                    defaultClass.setDamage(defaultClass.getDamage() + 35);
                     break;
                 case 5:
                     setInventory("치열한 수라에 지는 창 끝", 40);
+                    defaultClass.setDamage(defaultClass.getDamage() + 40);
                     break;
                 case 6:
                     setInventory("운명을 불태우는 총탄", 45);
+                    defaultClass.setDamage(defaultClass.getDamage() + 45);
                     break;
                 case 99:
-                    setInventory("신살자의 검", 999999);
+                    setInventory("아포칼립스", 999999);
+                    defaultClass.setDamage(defaultClass.getDamage() + 999999);
                     break;
             }
             System.out.println("구매 완료");
@@ -58,7 +70,7 @@ public interface PlayerInventory {
     }
 
     public static void getInventory(){
-        System.out.println("인벤토리 : " + inventory);
+        System.out.println("인벤토리 (이름=데미지) : " + inventory);
     }
 
     public static void setInventory(String name, int value){

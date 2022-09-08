@@ -9,6 +9,6 @@ public class God extends DefaultClass{
         setSkillDamage(9999999);
         setPlayerClass("신");
         setLevel(9999999);
-        setMoney(999999);
+        setMoney(999999999);
     }
 }

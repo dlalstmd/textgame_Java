@@ -13,6 +13,7 @@ public class MagicianClass extends DefaultClass implements DieMassage {
         setSkillDamage(50);
         setPlayerClass("마법사");
         setLevel(1);
+        setMoney(10000);
     }
 
     @Override

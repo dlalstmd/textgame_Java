@@ -13,6 +13,7 @@ public class ArcherClass extends DefaultClass implements DieMassage {
         setSkillDamage(30);
         setPlayerClass("궁수");
         setLevel(1);
+        setMoney(10000);
     }
 
     @Override
