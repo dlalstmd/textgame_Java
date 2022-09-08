@@ -13,6 +13,7 @@ public class WarriorClass extends DefaultClass implements DieMassage {
         setSkillDamage(30);
         setPlayerClass("전사");
         setLevel(1);
+
     }
 
     @Override

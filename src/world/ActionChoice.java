@@ -16,4 +16,18 @@ public interface ActionChoice {
         }
         return answer;
     }
+
+    public static int weaponBuy(){
+        String answer = null;
+        int weaponNum;
+        answer = sc.next();
+        if(answer.equals("예")){
+            System.out.print("몇번 무기를 구입하시겠습니까? : ");
+            weaponNum = sc.nextInt();
+            return weaponNum;
+        }
+        else{
+            return 0;
+        }
+    }
 }

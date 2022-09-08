@@ -8,6 +8,7 @@ public class Main {
     final static String MAGICIAN = "마법사";
     final static String ARCHER = "궁수";
     final static String ASSASSIN = "암살자";
+    final static String GOD = "신";
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -19,6 +20,11 @@ public class Main {
         String classSet = sc.next();
 
         DefaultClass character = null;
+
+        if(classSet.equals(GOD)){
+            character = new God();
+        }
+
         switch (classSet) {
             case WARRIOR:
                 character = new WarriorClass();
@@ -42,7 +48,6 @@ public class Main {
             character.printStatus();
 
             PlayerLife playerLife = new PlayerLife(character);
-
             character = playerLife.Life();
         }
     }

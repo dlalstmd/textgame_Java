@@ -4,7 +4,7 @@ import jobClass.*;
 import world.*;
 
 public class PlayerLife implements ActionChoice, Heal, PlayerInventory{
-    public DefaultClass character;
+    DefaultClass character;
     HuntingZone huntingZone = new HuntingZone();
     public PlayerLife(DefaultClass character) {
         this.character = character;
@@ -26,7 +26,6 @@ public class PlayerLife implements ActionChoice, Heal, PlayerInventory{
             System.out.println();
             System.out.println("현재 위치 : " + location);
             System.out.println();
-
 
             int portionCount = 0;
 
@@ -52,10 +51,19 @@ public class PlayerLife implements ActionChoice, Heal, PlayerInventory{
                         break;
                     case "스텟출력":
                         character.printStatus();
+                        PlayerInventory.getInventory();
                         break;
                     case "상점":
                         PlayerInventory.weaponListPrint(weaponPrintCount);
                         weaponPrintCount += 1;
+                        System.out.print("무기를 구입하시겠습니까? (예, 아니오) : ");
+                        int weaponBuy;
+                        weaponBuy = ActionChoice.weaponBuy();
+                        if(weaponBuy == 0){
+                            break;
+                        } else{
+                            PlayerInventory.buyWeapon(weaponBuy);
+                        }
                         break;
                     case "사냥터":
                         character.setHealth(huntingZone.moveToHuntingZone(character.getHealth()));
@@ -67,10 +75,9 @@ public class PlayerLife implements ActionChoice, Heal, PlayerInventory{
                 }
             }
         }
+
         DieMassage.dieMassage(day);
-
-
-
+        
         return character;
     }
 }
