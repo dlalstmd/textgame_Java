@@ -91,12 +91,11 @@ public class DefaultClass extends PlayerInformation {
         System.out.println("========" + getPlayerClass() + " " + getName() + " " + "스탯" + "=========");
         System.out.println("체력 : " + getHealth());
         System.out.println("경험치 : " + getExp());
+        System.out.println("레벨 : " + getLevel());
         System.out.println("공격력 : " + getDamage());
         System.out.println("에너지 : " + getEnergy());
         System.out.println("스킬데미지 : " + getSkillDamage());
         System.out.println("돈 : " + getMoney());
         System.out.println("=============================");
     }
-
-
 }

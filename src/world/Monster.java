@@ -1,10 +1,15 @@
 package world;
 
+import jobClass.DefaultClass;
+import player.LevelUp;
+
 import java.util.ArrayList;
 import java.util.Random;
 
-public class Monster {
+public class Monster implements LevelUp {
     private int monsterDamage;
+
+    DefaultClass DF = new DefaultClass();
     private int monsterHealth;
     ArrayList<String> monsterList = new ArrayList<>();
 
@@ -41,23 +46,23 @@ public class Monster {
     }
 
     public void goblin(){
-        setMonsterDamage(10);
-        setMonsterHealth(30);
+        setMonsterDamage(DF.getLevel()*10);
+        setMonsterHealth(DF.getLevel()*30);
     }
     public void bet(){
-        setMonsterDamage(15);
-        setMonsterHealth(20);
+        setMonsterDamage(DF.getLevel()*15);
+        setMonsterHealth(DF.getLevel()*20);
     }
     public void rat(){
-        setMonsterDamage(15);
-        setMonsterHealth(25);
+        setMonsterDamage(DF.getLevel()*15);
+        setMonsterHealth(DF.getLevel()*25);
     }
     public void dragon(){
-        setMonsterDamage(30);
-        setMonsterHealth(50);
+        setMonsterDamage(DF.getLevel()*30);
+        setMonsterHealth(DF.getLevel()*50);
     }
     public void slime(){
-        setMonsterDamage(10);
-        setMonsterHealth(10);
+        setMonsterDamage(DF.getLevel()*10);
+        setMonsterHealth(DF.getLevel()*10);
     }
 }

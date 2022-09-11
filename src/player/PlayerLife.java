@@ -3,8 +3,9 @@ package player;
 import jobClass.*;
 import world.*;
 
-public class PlayerLife implements ActionChoice, Heal, PlayerInventory{
+public class PlayerLife implements ActionChoice, Heal, PlayerInventory, LevelUp{
     DefaultClass character;
+
     HuntingZone huntingZone = new HuntingZone();
     public PlayerLife(DefaultClass character) {
         this.character = character;
@@ -16,7 +17,7 @@ public class PlayerLife implements ActionChoice, Heal, PlayerInventory{
         String action = ActionChoice.Action(day);
 
         while (!action.equals("자결")){
-            if(character.getHealth() == 0){
+            if(character.getHealth() <= 0){
                 break;
             } else if (day == 0) {
                 day += 1;
@@ -32,6 +33,9 @@ public class PlayerLife implements ActionChoice, Heal, PlayerInventory{
             label:
             while(true){
                 action = ActionChoice.Action(day);
+                if(character.getHealth() <= 0){
+                    break;
+                }
                 switch (action) {
                     case "다음날":
                         day += 1;
@@ -75,6 +79,7 @@ public class PlayerLife implements ActionChoice, Heal, PlayerInventory{
                         character.setHealth(huntingZone.moveToHuntingZone(character.getHealth()));
                         character.setExp(character.getExp()+10);
                         character.setMoney(character.getMoney()+1000);
+                        LevelUp.levelUp(character.getExp());
                         break;
                     default:
                         action = "잘못씀";

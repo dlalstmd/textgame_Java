@@ -5,13 +5,13 @@ import player.PlayerInformation;
 
 import java.util.Scanner;
 
-public class HuntingZone extends DefaultClass{
+public class HuntingZone extends DefaultClass {
 
     Scanner sc = new Scanner(System.in);
     PlayerInformation playerInformation = new PlayerInformation();
     Monster monster = new Monster();
 
-    public void location_set(){
+    public void location_set() {
         playerInformation.getLocation();
     }
 
@@ -34,14 +34,14 @@ public class HuntingZone extends DefaultClass{
                     monster.goblin();
                     System.out.println("야생의 고블린을 만났다.");
 
-                    while(monster.getMonsterHealth() > 0){
-                        System.out.println("내 체력 : " + HP + " 고블린 체력 : " + monster.getMonsterHealth());
+                    while (monster.getMonsterHealth() > 0) {
+                        System.out.println("내 체력 : " + getHealth() + " 고블린 체력 : " + monster.getMonsterHealth());
                         System.out.println("내 공격력 : " + getDamage() + " 고블린 공격력 : " + monster.getMonsterDamage());
                         System.out.print("선택지를 정하세요 (공격, 런) : ");
                         choice = sc.next();
-                        if (choice.equals("공격")){
+                        if (choice.equals("공격")) {
                             monster.setMonsterHealth(monster.getMonsterHealth() - getDamage());
-                            Damage = HealthCalculate.healthCount(HP, monster.getMonsterDamage());
+                            setHealth(getHealth() - monster.getMonsterDamage());
                             System.out.println();
                             System.out.println("   [   ]   /             ");
                             System.out.println("    /|\\   /              ");
@@ -56,14 +56,14 @@ public class HuntingZone extends DefaultClass{
                 case "bet":
                     monster.bet();
                     System.out.println("야생의 박쥐을 만났다.");
-                    while(monster.getMonsterHealth() > 0){
-                        System.out.println("내 체력 : " + HP + " 박쥐 체력 : " + monster.getMonsterHealth());
+                    while (monster.getMonsterHealth() > 0) {
+                        System.out.println("내 체력 : " + getHealth() + " 박쥐 체력 : " + monster.getMonsterHealth());
                         System.out.println("내 공격력 : " + getDamage() + " 박쥐 공격력 : " + monster.getMonsterDamage());
                         System.out.print("선택지를 정하세요 (공격, 런) : ");
                         choice = sc.next();
-                        if (choice.equals("공격")){
+                        if (choice.equals("공격")) {
                             monster.setMonsterHealth(monster.getMonsterHealth() - getDamage());
-                            Damage = HealthCalculate.healthCount(HP, monster.getMonsterDamage());
+                            setHealth(getHealth() - monster.getMonsterDamage());
                             System.out.println();
                             System.out.println("   [   ]   /             ");
                             System.out.println("    /|\\   /              ");
@@ -79,14 +79,14 @@ public class HuntingZone extends DefaultClass{
                 case "rat":
                     monster.rat();
                     System.out.println("야생의 쥐을 만났다.");
-                    while(monster.getMonsterHealth() > 0){
-                        System.out.println("내 체력 : " + HP + " 쥐 체력 : " + monster.getMonsterHealth());
+                    while (monster.getMonsterHealth() > 0) {
+                        System.out.println("내 체력 : " + getHealth() + " 쥐 체력 : " + monster.getMonsterHealth());
                         System.out.println("내 공격력 : " + getDamage() + " 쥐 공격력 : " + monster.getMonsterDamage());
                         System.out.print("선택지를 정하세요 (공격, 런) : ");
                         choice = sc.next();
-                        if (choice.equals("공격")){
+                        if (choice.equals("공격")) {
                             monster.setMonsterHealth(monster.getMonsterHealth() - getDamage());
-                            Damage = HealthCalculate.healthCount(HP, monster.getMonsterDamage());
+                            setHealth(getHealth() - monster.getMonsterDamage());
                             System.out.println();
                             System.out.println("   [   ]   /             ");
                             System.out.println("    /|\\   /              ");
@@ -101,14 +101,14 @@ public class HuntingZone extends DefaultClass{
                 case "dragon":
                     monster.dragon();
                     System.out.println("야생의 드래곤을 만났다.");
-                    while(monster.getMonsterHealth() > 0){
-                        System.out.println("내 체력 : " + HP + " 드래곤 체력 : " + monster.getMonsterHealth());
+                    while (monster.getMonsterHealth() > 0) {
+                        System.out.println("내 체력 : " + getHealth() + " 드래곤 체력 : " + monster.getMonsterHealth());
                         System.out.println("내 공격력 : " + getDamage() + " 드래곤 공격력 : " + monster.getMonsterDamage());
                         System.out.print("선택지를 정하세요 (공격, 런) : ");
                         choice = sc.next();
-                        if (choice.equals("공격")){
+                        if (choice.equals("공격")) {
                             monster.setMonsterHealth(monster.getMonsterHealth() - getDamage());
-                            Damage = HealthCalculate.healthCount(HP, monster.getMonsterDamage());
+                            setHealth(getHealth() - monster.getMonsterDamage());
                             System.out.println();
                             System.out.println("   [   ]   /             ");
                             System.out.println("    /|\\   /              ");
@@ -124,14 +124,15 @@ public class HuntingZone extends DefaultClass{
                 case "slime":
                     monster.slime();
                     System.out.println("야생의 슬라임을 만났다.");
-                    while(monster.getMonsterHealth() > 0){
-                        System.out.println("내 체력 : " + HP + " 슬라임 체력 : " + monster.getMonsterHealth());
+                    while (monster.getMonsterHealth() > 0) {
+                        System.out.println("내 체력 : " + getHealth() + " 슬라임 체력 : " + monster.getMonsterHealth());
                         System.out.println("내 공격력 : " + getDamage() + " 슬라임 공격력 : " + monster.getMonsterDamage());
                         System.out.print("선택지를 정하세요 (공격, 런) : ");
                         choice = sc.next();
-                        if (choice.equals("공격")){
+                        if (choice.equals("공격")) {
                             monster.setMonsterHealth(monster.getMonsterHealth() - getDamage());
-                            Damage = HealthCalculate.healthCount(HP, monster.getMonsterDamage());
+
+                            setHealth(getHealth() - monster.getMonsterDamage());
                             System.out.println();
                             System.out.println("   [   ]   /             ");
                             System.out.println("    /|\\   /              ");
@@ -146,13 +147,9 @@ public class HuntingZone extends DefaultClass{
                     break;
             }
         } else if (answer.equals("아니오")) {
-            return HP;
+            return getHealth();
         }
-
-        if (Damage == 0){
-            return HP;
-        } else {
-            return Damage;
-        }
+        return getHealth();
     }
 }
+
